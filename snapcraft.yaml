@@ -16,7 +16,7 @@ parts:
     after: [desktop-qt5]
     plugin: qmake
     source-type: git
-    source-tag: '20.07'
+    source-tag: '20.09'
     source-subdir: src
     source: https://gitlab.com/munadi/munadi.git
     parse-info: [usr/share/metainfo/org.munadi.Munadi.metainfo.xml]
