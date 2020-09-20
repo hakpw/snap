@@ -23,6 +23,7 @@ parts:
     build-packages:
       - g++
       - make
+      - ccache
       - qtbase5-dev
       - qtdeclarative5-dev
       - qtlocation5-dev
