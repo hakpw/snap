@@ -1,11 +1,11 @@
 name: munadi
 adopt-info: munadi
-base: core18
+base: core20
 confinement: strict
 grade: stable
 apps:
   munadi:
-    command: desktop-launch munadi
+    command: bin/desktop-launch $SNAP/usr/bin/munadi
     common-id: org.munadi.Munadi
     autostart: org.munadi.Munadi.desktop
     plugs: [home, network, unity7, opengl, mir, audio-playback, desktop, desktop-legacy]
@@ -14,23 +14,30 @@ apps:
 parts:
   munadi:
     after: [desktop-qt5]
-    plugin: qmake
+    plugin: cmake
+    cmake-generator: Ninja
+    cmake-parameters:
+      - -DCMAKE_BUILD_TYPE=Release
+      - -DCMAKE_INSTALL_PREFIX=/usr
     source-type: git
     source-tag: '20.09.1'
-    source-subdir: src
     source: https://gitlab.com/munadi/munadi.git
     parse-info: [usr/share/metainfo/org.munadi.Munadi.metainfo.xml]
     build-packages:
       - g++
-      - make
+      - cmake
+      - ninja-build
       - ccache
+      - qt5-qmake
       - qtbase5-dev
-      - qtdeclarative5-dev
       - qtlocation5-dev
       - qtmultimedia5-dev
+      - qtdeclarative5-dev
       - qtpositioning5-dev
-      - qtquickcontrols2-5-dev
       - qttools5-dev-tools
+      - qtquickcontrols2-5-dev
+      - build-essential
+      - qt5-default 
     stage-packages:
       - qml-module-qt-labs-folderlistmodel
       - qml-module-qtquick-dialogs
