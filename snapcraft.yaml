@@ -20,7 +20,7 @@ parts:
       - -DCMAKE_BUILD_TYPE=Release
       - -DCMAKE_INSTALL_PREFIX=/usr
     source-type: git
-    source-commit: 125e2ed0d9e564961987884ad932652d028f9554
+    source-commit: 7f754064d6a3cc46bd0d13c3d9296cb743a10dee
     source: https://gitlab.com/munadi/munadi.git
     parse-info: [usr/share/metainfo/org.munadi.Munadi.metainfo.xml]
     build-packages:
@@ -55,6 +55,7 @@ parts:
       - gstreamer1.0-plugins-base
       - gstreamer1.0-plugins-good
       - gstreamer1.0-pulseaudio
+      - libqt5multimedia5-plugins
       - qtwayland5
   desktop-qt5:
     source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
