@@ -20,7 +20,7 @@ parts:
       - -DCMAKE_BUILD_TYPE=Release
       - -DCMAKE_INSTALL_PREFIX=/usr
     source-type: git
-    source-commit: 7f754064d6a3cc46bd0d13c3d9296cb743a10dee
+    source-commit: b7e825ea81f7bda44551991e3b71d8a37e8c0c7e
     source: https://gitlab.com/munadi/munadi.git
     parse-info: [usr/share/metainfo/org.munadi.Munadi.metainfo.xml]
     build-packages:
